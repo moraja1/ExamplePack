@@ -6,6 +6,7 @@ import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 public class MainWindow extends JFrame {
     private AboutWindow aboutWindow;
@@ -20,6 +21,7 @@ public class MainWindow extends JFrame {
     private JMenuItem grid_bag_layout;
     private JMenuItem card_layout;
     private JMenu about;
+    private GridLayout glayout;
     //Constructor
     public MainWindow(){
         //Initialize mainPanel
@@ -117,7 +119,57 @@ public class MainWindow extends JFrame {
     }
 
     private void initGridLayoutExample() {
+        glayout = new GridLayout(3, 2, 15, 15);
+        this.setLayout(glayout);
+        JLabel name = new JLabel("Nombre:");
+        JTextField txtName = new JTextField();
+        String[] comboList = {"Rojo","Azul","Verde","Violeta","Negro"};
+        JComboBox colorsComboBox = new JComboBox(comboList);
+        JTextArea txtShow = new JTextArea();
+        txtShow.setEditable(false);
+        JButton show = new JButton("Mostrar");
+        JButton erase = new JButton("Borrar");
+        add(name);add(txtName);add(colorsComboBox);add(show);add(txtShow);add(erase);
+        this.setSize(600, 400);
+        colorsComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switch ((String)colorsComboBox.getSelectedItem()){
+                    case "Rojo":
+                        txtShow.setForeground(Color.RED);
+                        break;
+                    case "Azul":
+                        txtShow.setForeground(Color.BLUE);
+                        break;
+                    case "Verde":
+                        txtShow.setForeground(Color.GREEN);
+                        break;
+                    case "Violeta":
+                        txtShow.setForeground(Color.MAGENTA);
+                        break;
+                    case "Negro":
+                        txtShow.setForeground(Color.BLACK);
+                        break;
+                }
+            }
+        });
 
+        show.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                colorsComboBox.getActionListeners()[0].actionPerformed(e);
+                txtShow.setText(txtName.getText());
+            }
+        });
+
+        erase.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtShow.setText("");
+                txtName.setText("");
+                colorsComboBox.setSelectedIndex(0);
+            }
+        });
     }
 
     private void initFlowLayoutExample() {
