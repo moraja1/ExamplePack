@@ -22,6 +22,8 @@ public class MainWindow extends JFrame {
     private JMenu about;
     //Constructor
     public MainWindow(){
+        //Initialize mainPanel
+        mainPanel = new JPanel();
         //Seting JPanel
         this.setContentPane(mainPanel);
         //Create JMenuBar
@@ -57,8 +59,6 @@ public class MainWindow extends JFrame {
         this.setTitle("Example Pack");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        //Initialize mainPanel
-        mainPanel = new JPanel();
     }
 
     private void createActionListeners() {
@@ -71,25 +71,25 @@ public class MainWindow extends JFrame {
         grid_layout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                initGridLayoutExample();
             }
         });
         flow_layout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                initFlowLayoutExample();
             }
         });
         grid_bab_layout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                initGridBabLayoutExample();
             }
         });
         card_layout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                initCardLayoutExample();
             }
         });
         about.addMenuListener(new MenuListener() {
@@ -108,9 +108,31 @@ public class MainWindow extends JFrame {
                 
             }
         });
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    private void initGridLayoutExample() {
+    }
+
+    private void initFlowLayoutExample() {
+        
+    }
+
+    private void initGridBabLayoutExample() {
+        
+    }
+
+    private void initCardLayoutExample() {
+        
     }
 
     private void initBorderLayoutExample() {
+
     }
 
     private void opensAbout() {

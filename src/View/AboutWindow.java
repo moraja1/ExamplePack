@@ -11,7 +11,8 @@ public class AboutWindow extends JDialog {
 
         dialogPanel = new JPanel();
         JTextArea message = new JTextArea();
-        message.setText("Este programa fué desarrollado en el curso de " +
+        message.setText(
+                "Este programa fué desarrollado en el curso de " +
                 "\nprogramación 3 de la Universidad Nacional de " +
                 "\nCosta Rica por: " +
                 "\nJaison Mora Víquez" +
@@ -20,6 +21,7 @@ public class AboutWindow extends JDialog {
         this.setContentPane(dialogPanel);
         this.add(message);
         this.pack();
+        this.setLocationRelativeTo(owner);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
