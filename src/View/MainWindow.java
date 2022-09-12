@@ -17,7 +17,7 @@ public class MainWindow extends JFrame {
     private JMenuItem border_layout;
     private JMenuItem grid_layout;
     private JMenuItem flow_layout;
-    private JMenuItem grid_bab_layout;
+    private JMenuItem grid_bag_layout;
     private JMenuItem card_layout;
     private JMenu about;
     //Constructor
@@ -37,12 +37,12 @@ public class MainWindow extends JFrame {
         border_layout = new JMenuItem("BorderLayout");
         grid_layout = new JMenuItem("GridLayout");
         flow_layout = new JMenuItem("FlowLayout");
-        grid_bab_layout = new JMenuItem("GridBabLayout");
+        grid_bag_layout = new JMenuItem("GridBabLayout");
         card_layout = new JMenuItem("CardLayout");
         examples.add(border_layout);
         examples.add(grid_layout);
         examples.add(flow_layout);
-        examples.add(grid_bab_layout);
+        examples.add(grid_bag_layout);
         examples.add(card_layout);
         //Create JMenu about
         about = new JMenu("Acerca de");
@@ -80,10 +80,10 @@ public class MainWindow extends JFrame {
                 initFlowLayoutExample();
             }
         });
-        grid_bab_layout.addActionListener(new ActionListener() {
+        grid_bag_layout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                initGridBabLayoutExample();
+                initGridBagLayoutExample();
             }
         });
         card_layout.addActionListener(new ActionListener() {
@@ -117,13 +117,14 @@ public class MainWindow extends JFrame {
     }
 
     private void initGridLayoutExample() {
+
     }
 
     private void initFlowLayoutExample() {
         
     }
 
-    private void initGridBabLayoutExample() {
+    private void initGridBagLayoutExample() {
         
     }
 
