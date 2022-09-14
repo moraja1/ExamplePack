@@ -1,6 +1,4 @@
-package Application;
-
-import Controller.MainWindowController;
+package ExamplePack;
 
 public class ExamplePack {
     public static void main(String[] args) {

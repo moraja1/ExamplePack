@@ -1,6 +1,4 @@
-package Controller;
-
-import View.MainWindow;
+package ExamplePack;
 
 public class MainWindowController {
     private MainWindow mainWindow;
