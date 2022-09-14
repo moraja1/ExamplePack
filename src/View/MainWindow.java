@@ -6,6 +6,8 @@ import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Vector;
 
 public class MainWindow extends JFrame {
@@ -173,7 +175,55 @@ public class MainWindow extends JFrame {
     }
 
     private void initFlowLayoutExample() {
-        
+        //Creo el TabbedPane
+        JTabbedPane tabbedPane = new JTabbedPane();
+        //Creo los paneles
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        //Agrego los paneles al tabbedPane
+        tabbedPane.add("Personas", panel1);
+        tabbedPane.add("Empresas", panel2);
+        tabbedPane.add("Lugares", panel3);
+        //Creo JList personas
+        DefaultListModel<String> personasList = new DefaultListModel<>();
+        personasList.addElement("Jorge Mora Sandoval"); personasList.addElement("Jaison Mora Víquez");
+        personasList.addElement("Minor Vargas Viquez"); personasList.addElement("Carlos Azofeifa Brenes");
+        JList<String> personas = new JList<>(personasList);
+        //Creo JList empresas
+        DefaultListModel<String> empresasList = new DefaultListModel<>();
+        empresasList.addElement("MicroServices"); empresasList.addElement("IT Development Masters");
+        empresasList.addElement("Proper Intelligence"); empresasList.addElement("JatBrains");
+        JList<String> empresas = new JList<>(empresasList);
+        //Creo JList lugares
+        DefaultListModel<String> lugaresList = new DefaultListModel<>();
+        lugaresList.addElement("Mexico"); lugaresList.addElement("Brazil");
+        lugaresList.addElement("Alemania"); lugaresList.addElement("Holanda");
+        JList<String> lugares = new JList<>(empresasList);
+        //Agrego un boton
+        JButton agregador = new JButton("Click me!");
+        agregador.setBounds(450, 150, 100, 25);
+        //Agrego las listas a los respectivos paneles y el boton
+        panel1.add(personas);
+        panel2.add(empresas);
+        panel3.add(lugares);
+        tabbedPane.setBounds(50, 50, 400, 200);
+        setLayout(null);
+        add(tabbedPane);
+        add(agregador);
+        setSize(new Dimension(600, 400));
+
+        //Agrego un Listener al JButton
+        agregador.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                chooseAction();
+            }
+        });
+    }
+
+    private void chooseAction() {
+        JOptionPane optionPane =
     }
 
     private void initGridBagLayoutExample() {
@@ -197,4 +247,7 @@ public class MainWindow extends JFrame {
         this.setVisible(true);
     }
 
+    private int obtainRandomNumber(){
+        return (int)Math.floor(Math.random()*10+1);
+    }
 }
