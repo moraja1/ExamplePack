@@ -12,7 +12,7 @@ public class BorderLayoutView {
     private JButton westBtn;
 
     public BorderLayoutView(JFrame frame){
-        frame = new JFrame();
+        this.frame = frame;
         frame.setLayout(new BorderLayout());
         northBtn = new JButton("North");
         westBtn = new JButton("West");
@@ -26,7 +26,7 @@ public class BorderLayoutView {
         frame.add(p,BorderLayout.CENTER);
         frame.add(southLabel,BorderLayout.SOUTH);
 
-            initComponents();
+        initComponents();
         frame.setVisible(true);
 
     }

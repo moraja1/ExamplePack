@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
 
 public class CardLayoutView extends JFrame {
 
-     CardLayout card;
-     JButton btn1, btn2, btn3;
+     private CardLayout card;
+    private JButton btn1, btn2, btn3;
 
-     Container container;
+    private Container container;
 
-     CardLayoutView(){
+     public CardLayoutView(){
          container = getContentPane();
 
          card=new CardLayout(40,30);
