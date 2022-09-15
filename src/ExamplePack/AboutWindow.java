@@ -16,7 +16,7 @@ public class AboutWindow extends JDialog {
                 "\nprogramación 3 de la Universidad Nacional de " +
                 "\nCosta Rica por: " +
                 "\nJaison Mora Víquez" +
-                "\nDaniel Sibaja Vindas" +
+                "\nCarlos Daniel Sibaja Vindas" +
                 "\nBrandon Alfaro Espinoza");
         this.setContentPane(dialogPanel);
         this.add(message);

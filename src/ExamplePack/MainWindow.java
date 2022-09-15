@@ -130,17 +130,16 @@ public class MainWindow extends JFrame {
     }
 
 
-
     private void initGridBagLayoutExample() {
         
     }
 
     private void initCardLayoutExample() {
-        
+
     }
 
     private void initBorderLayoutExample() {
-
+        BorderLayoutView bdrview = new BorderLayoutView(this);
     }
 
     private void opensAbout() {
