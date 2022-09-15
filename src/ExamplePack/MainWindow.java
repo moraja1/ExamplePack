@@ -131,7 +131,8 @@ public class MainWindow extends JFrame {
 
 
     private void initGridBagLayoutExample() {
-        
+        eraseElements();
+        GridBagLayoutView grdview = new GridBagLayoutView(this);
     }
 
     private void initCardLayoutExample() {
