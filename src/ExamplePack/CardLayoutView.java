@@ -2,42 +2,60 @@ package ExamplePack;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class CardLayoutView extends JFrame {
+public class CardLayoutView {
 
-     private CardLayout card;
+    private JFrame frame;
+    private CardLayout card;
     private JButton btn1, btn2, btn3;
-
     private Container container;
 
-     public CardLayoutView(){
-         container = getContentPane();
+     public CardLayoutView(JFrame frame){
+         this.frame = frame;
+         container = frame.getContentPane();
 
          card=new CardLayout(40,30);
-
          container.setLayout(card);
 
          btn1 = new JButton("House");
          btn2 = new JButton("Person");
          btn3 = new JButton("Key");
 
-         btn1.addActionListener((ActionListener) this);
-         btn2.addActionListener((ActionListener) this);
-         btn3.addActionListener((ActionListener) this);
-
-         container.add("a",btn1);
-         container.add("b",btn2);
-         container.add("c",btn3);
+         container.add(btn1);
+         container.add(btn2);
+         container.add(btn3);
 
          initComponents();
 
+         frame.setSize(new Dimension(600, 500));
+
      }
 
-    private void initComponents() {
-         card.next(container);
+    private void nextPane() {
+        card.next(container);
     }
 
-
+    private void initComponents() {
+        btn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextPane();
+            }
+        });
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextPane();
+            }
+        });
+        btn3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextPane();
+            }
+        });
+    }
 }

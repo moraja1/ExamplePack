@@ -137,7 +137,7 @@ public class MainWindow extends JFrame {
 
     private void initCardLayoutExample() {
         eraseElements();
-        CardLayoutView clview = new CardLayoutView();
+        CardLayoutView clview = new CardLayoutView(this);
     }
 
     private void initBorderLayoutExample() {
